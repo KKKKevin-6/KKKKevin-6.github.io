@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<title>Chapter 1. First WebGL Demo</title>
+		<!-- css样式 -->
+		<style type="text/css">
+			body,div
+			{
+				margin: 0 auto;
+				padding: 0;
+				background-color: #fffaeb;
+				color: #505050;
+			}
+		</style>
+		<!-- 顶点着色器和片元着色器代码 -->
+		<!--a-->
+		<script id="vertex-shader-a" type="x-shader/x-vertex">
+			attribute vec4 vPosition;
+		
+			void main(){
+				gl_Position = vPosition;
+			}
+		</script>
+		<script id="fragment-shader-a" type="x-shader/x-fragment">
+			precision mediump float;
+			varying vec4 fColor;
+			void main(){
+				gl_FragColor = vec4( 1.0, 1.0, 0.0, 1.0 );
+			}
+		</script>
+		<!--b-->
+		<script id="vertex-shader-b" type="x-shader/x-vertex">
+			attribute vec4 vPosition;
+		
+			void main(){
+				gl_Position = vPosition;
+			}
+		</script>
+		<script id="fragment-shader-b" type="x-shader/x-fragment">
+			precision mediump float;
+			varying vec4 fColor;
+			void main(){
+				gl_FragColor = vec4( 0.0, 1.0, 0.0, 1.0 );
+			}
+		</script>
+		<!--c-->
+		<script id="vertex-shader-c" type="x-shader/x-vertex">
+			attribute vec4 vPosition;
+		
+			void main(){
+				gl_Position = vPosition;
+			}
+		</script>
+		<script id="fragment-shader-c" type="x-shader/x-fragment">
+			precision mediump float;
+			varying vec4 fColor;
+			void main(){
+				gl_FragColor = vec4( 0.0, 1.0, 1.0, 1.0 );
+			}
+		</script>
+		<!--d-->
+		<script id="vertex-shader-d" type="x-shader/x-vertex">
+			attribute vec4 vPosition;
+		
+			void main(){
+				gl_Position = vPosition;
+			}
+		</script>
+		<script id="fragment-shader-d" type="x-shader/x-fragment">
+			precision mediump float;
+			varying vec4 fColor;
+			void main(){
+				gl_FragColor = vec4( 0.0, 1.0, 1.0, 1.0 );
+			}
+		</script>
+		<script id="fragment-shader2-d" type="x-shader/x-fragment">
+			precision mediump float;
+			varying vec4 fColor2;
+			void main(){
+				gl_FragColor = vec4( 0.0, 1.0, 0.0, 1.0 );
+			}
+		</script>
+		<!--e-->
+		<script id="vertex-shader-e" type="x-shader/x-vertex">
+			attribute vec4 vPosition;
+			attribute vec4 vColor;
+			varying vec4 fColor;
+			void main(){
+				gl_Position = vPosition;
+				fColor=vColor;
+			}
+		</script>
+		<script id="fragment-shader-e" type="x-shader/x-fragment">
+			precision mediump float;
+			varying vec4 fColor;
+			void main(){
+				gl_FragColor = fColor;
+			}
+		</script>
+		<!-- 一组相关的JS库 -->
+		<script type="text/javascript" src="./webgl-utils.js"></script>
+		<script type="text/javascript" src="./initShaders.js"></script>
+		<script type="text/javascript" src="./glMatrix-0.9.5.min.js"></script>
+		<!-- 绘制三角形的JS代码 -->
+		<script type="text/javascript" src="./triangle.js"></script>
+		
+	</head>
+	<body>
+		<div>
+			 a </br>
+			<!-- <script type="text/javascript" src="./triangle-a.js"></script> -->
+			<canvas id="triangle-canvas-a" style="border:none;" width="500" height="500"></canvas>
+		</div>
+		<div>
+			 b </br> 
+			<!-- <script type="text/javascript" src="./triangle-b.js"></script> -->
+			<canvas id="triangle-canvas-b" style="border:none;" width="500" height="500"></canvas>
+		</div>
+		<div>
+			 c </br>
+			<!-- <script type="text/javascript" src="./triangle-c.js"></script> -->
+			<canvas id="triangle-canvas-c" style="border:none;" width="500" height="500"></canvas>
+		</div>
+		<div>
+			 d </br>
+			<!-- <script type="text/javascript" src="./triangle-d.js"></script> -->
+			<canvas id="triangle-canvas-d" style="border:none;" width="500" height="500"></canvas>
+		</div>
+		<div>
+			 e </br>
+			<!-- <script type="text/javascript" src="./triangle-e.js"></script> -->
+			<canvas id="triangle-canvas-e" style="border:none;" width="500" height="500"></canvas>
+		</div>
+		
+	</body>
+</html>
