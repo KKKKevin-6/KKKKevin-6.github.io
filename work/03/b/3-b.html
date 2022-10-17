@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>Chap2 Demo Sierpinski Gasket 3D</title>
+    <script id="vertex-shader" type="x-shader/x-vertex">
+	attribute vec3 vPosition;
+	attribute vec3 vColor;
+	varying vec4 color;
+
+	void main(){
+		gl_Position = vec4( vPosition, 1.0 );
+		color = vec4( vColor, 1.0 );
+	}
+	</script>
+
+    <script id="fragment-shader" type="x-shader/x-fragment">
+	precision mediump float;
+	varying vec4 color;
+	void main(){
+		gl_FragColor = color;
+	}
+	</script>
+
+    <script type="text/javascript" src="./webgl-utils.js"></script>
+    <script type="text/javascript" src="./initShaders.js"></script>
+    <script type="text/javascript" src="./gl-matrix-min.js"></script>
+
+    <script type="text/javascript" src="./gasket-triangles.js"></script>
+</head>
+
+<body>
+    <h2>Sierpinski Gasket in 3D</h2>
+    <canvas id="gl-canvas" width="512" height="512">你的浏览器不支持HTML5 canvas元素</canvas>
+
+    <br/>
+    <div>
+        <input type="button" value="0" onclick="refresh(0)">
+        <input type="button" value="1" onclick="refresh(1)">
+        <input type="button" value="2" onclick="refresh(2)">
+        <input type="button" value="3" onclick="refresh(3)">
+        <input type="button" value="4" onclick="refresh(4)">
+        <input type="button" value="5" onclick="refresh(5)">
+        <input type="button" value="6" onclick="refresh(6)">
+        <input type="button" value="7" onclick="refresh(7)">
+    </div>
+    <!-- <br/>
+    level：0
+    <input type="range" id="level" min="0" max="7" >
+    7
+    <input type="button" value="确定" onclick="refresh()"> -->
+</body>
+
+</html>

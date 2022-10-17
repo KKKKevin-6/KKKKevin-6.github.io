@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>实验三</title>
+    
+    <script id="vertex-shader-a" type="x-shader/x-vertex">
+        attribute vec4 vPosition;
+        void main(){
+            gl_Position = vPosition;
+        }
+	</script>
+    <script id="fragment-shader-a" type="x-shader/x-fragment">
+        precision mediump float;
+        void main(){
+            gl_FragColor = vec4( 0.0, 1.0, 1.0, 1.0 );
+        }
+	</script>
+
+    <script id="vertex-shader-b" type="x-shader/x-vertex">
+        attribute vec3 vPosition;
+        attribute vec3 vColor;
+        varying vec4 color;
+
+        void main(){
+            gl_Position = vec4( vPosition, 1.0 );
+            color = vec4( vColor, 1.0 );
+        }
+    </script>
+    <script id="fragment-shader-b" type="x-shader/x-fragment">
+        precision mediump float;
+        varying vec4 color;
+        void main(){
+            gl_FragColor = color;
+        }
+    </script>
+
+    <script id="vertex-shader-c" type="x-shader/x-vertex">
+        attribute vec4 vPosition;
+        void main(){
+            gl_Position = vPosition;
+        }
+    </script>
+    <script id="fragment-shader-c" type="x-shader/x-fragment">
+        precision mediump float;
+        void main(){
+            gl_FragColor = vec4( 1.0, 0.0, 0.0, 1.0 );
+        }
+    </script>
+
+    <script id="vertex-shader-d" type="x-shader/x-vertex">
+        attribute vec4 vPosition;
+        void main(){
+            gl_Position = vPosition;
+        }
+    </script>
+    <script id="fragment-shader-d" type="x-shader/x-fragment">
+        precision mediump float;
+        void main(){
+            gl_FragColor = vec4( 1.0, 0.0, 0.0, 1.0 );
+        }
+    </script>
+
+    <script id="vertex-shader-e" type="x-shader/x-vertex">
+        attribute vec4 vPosition;
+        void main(){
+            gl_Position = vPosition;
+        }
+    </script>
+    <script id="fragment-shader-e" type="x-shader/x-fragment">
+        precision mediump float;
+        void main(){
+            gl_FragColor = vec4( 1.0, 0.0, 0.0, 1.0 );
+        }
+    </script>
+
+
+    <script type="text/javascript" src="./webgl-utils.js"></script>
+    <script type="text/javascript" src="./initShaders.js"></script>
+    <script type="text/javascript" src="./gl-matrix-min.js"></script>
+
+    <script type="text/javascript" src="./draw.js"></script>
+</head>
+
+<body>
+    <div>
+        <h2>Sierpinski Gasket in 2D</h2>
+        <canvas id="gl-canvas-a" width="512" height="512">你的浏览器不支持HTML5 canvas元素</canvas>
+        <br/><br/>
+        level:0
+        <input type="range" id="levelA" min="0" max="7" step="1">
+        7
+        <input type="button" value="确定" onclick="refreshA()">
+    </div>
+
+    <div>
+        <h2>Sierpinski Gasket in 3D</h2>
+        <canvas id="gl-canvas-b" width="512" height="512">你的浏览器不支持HTML5 canvas元素</canvas>
+    
+        <br/>
+        <div>
+            <input type="button" value="0" onclick="refreshB(0)">
+            <input type="button" value="1" onclick="refreshB(1)">
+            <input type="button" value="2" onclick="refreshB(2)">
+            <input type="button" value="3" onclick="refreshB(3)">
+            <input type="button" value="4" onclick="refreshB(4)">
+            <input type="button" value="5" onclick="refreshB(5)">
+            <input type="button" value="6" onclick="refreshB(6)">
+            <input type="button" value="7" onclick="refreshB(7)">
+        </div>
+    </div>
+   
+    <div>
+        <h2>Triangle Tessellation</h2>
+        <canvas id="gl-canvas-c" width="512" height="512">你的浏览器不支持HTML5 canvas元素</canvas>
+        <br/>
+        <div>
+            <input type="button" value="0" onclick="refreshC(0)">
+            <input type="button" value="1" onclick="refreshC(1)">
+            <input type="button" value="2" onclick="refreshC(2)">
+            <input type="button" value="3" onclick="refreshC(3)">
+            <input type="button" value="4" onclick="refreshC(4)">
+            <input type="button" value="5" onclick="refreshC(5)">
+            <input type="button" value="6" onclick="refreshC(6)">
+            <input type="button" value="7" onclick="refreshC(7)">
+        </div>
+    </div>
+    
+    <div>
+        <h2>Triangle Tessellation</h2>
+        <canvas id="gl-canvas-d" width="512" height="512">你的浏览器不支持HTML5 canvas元素</canvas>
+        <br/><br/>
+        请输入旋转角度：<input type="text" id="degreeD">
+        <input type="button" value="确定" onclick="refreshD()">
+    </div>
+
+    <div>
+        <h2>Triangle Tessellation</h2>
+        <canvas id="gl-canvas-e" width="512" height="512">你的浏览器不支持HTML5 canvas元素</canvas>
+        <br/><br/>
+        请输入变形角度：<input type="text" id="degreeE">
+        <input type="button" value="确定" onclick="refreshE()">
+    </div>
+
+</body>
+
+</html>

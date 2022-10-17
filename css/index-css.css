@@ -51,12 +51,12 @@ li a, .dropbtn {
   display: inline-block;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 16px 18px;
   text-decoration: none;
 }
 
 li a:hover, .dropdown:hover .dropbtn {
-  background-color: red;
+  background-color: #000000;
 }
 
 li.dropdown {
@@ -80,9 +80,54 @@ li.dropdown {
   text-align: left;
 }
 
-.dropdown-content a:hover {background-color: #f1f1f1;}
+.dropdown-content a:hover {background-color: #eeeeee;}
 
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
+
+
+
+
+
+.button1
+		{
+			margin-left: 10%;
+			width: 70px;
+			height: 40px;
+			border-bottom: solid 2px  #96b188;
+			border-right:  solid 2px  #96b188;
+			border-left:  solid 2px  #def0d4;
+			border-top:  solid 2px  #def0d4;
+			border-radius: 10px;
+			background-color: #b8d9a7;
+			color: #f0f0cb;
+			box-shadow: #98B48A 5px 5px;
+			font-size: large;
+			transition: all 0.5s ease 0s;
+			
+		}
+		.button1:hover
+		{
+			box-shadow: 0px 0px;
+			transform: translate(5px,5px);
+		}
+		.button2
+		{
+			width: 80px;
+			height: 30px;
+			background-color: #FFCD9B;
+			color: #f5ffc3;
+			border: 0;
+			margin: 3px;
+		}
+		.button2:hover
+		{
+			text-shadow: 0px 0px 5px #f5ffc3;
+		}
+		.button2:active
+		{
+			border: solid 2px #fff8e1 ;
+			font-size: small;
+		}
